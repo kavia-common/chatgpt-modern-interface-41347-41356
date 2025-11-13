@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Hello from './routes/Hello';
+import Chat from './routes/Chat';
 
 // PUBLIC_INTERFACE
 function App() {
@@ -33,15 +34,7 @@ function App() {
 
       <main>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div style={{ padding: 24, textAlign: 'center' }}>
-                <h1>Chat UI Home</h1>
-                <p>Welcome! Use the navigation to view the Hello screen.</p>
-              </div>
-            }
-          />
+          <Route path="/" element={<Chat />} />
           <Route path="/hello" element={<Hello />} />
         </Routes>
       </main>

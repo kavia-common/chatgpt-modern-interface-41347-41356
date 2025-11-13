@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 /**
  * PUBLIC_INTERFACE
  * A simple navigation bar for the app.
  */
 function NavBar() {
-  /** Render NavBar with Home and Hello links */
+  /** Render NavBar with Home(Chat) and Hello links */
   return (
     <nav
       className="navbar"
@@ -27,8 +27,9 @@ function NavBar() {
           textDecoration: 'none',
           fontWeight: 600
         })}
+        end
       >
-        Home
+        Chat
       </NavLink>
       <span aria-hidden="true" style={{ opacity: 0.25 }}>|</span>
       <NavLink
