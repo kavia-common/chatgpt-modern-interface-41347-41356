@@ -1,82 +1,98 @@
-# Lightweight React Template for KAVIA
+# ChatGPT Frontend (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+This frontend provides a modern chat UI and a Hello design screen. It supports environment-driven API configuration with a local mock fallback and includes basic accessibility features and keyboard controls.
 
-## Features
+## Quick Start
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Install dependencies: run `npm install` in `chatgpt_frontend`
+- Start the dev server: run `npm start`
+- Open http://localhost:3000
 
-## Getting Started
+## Routes
 
-In the project directory, you can run:
+- / — Chat route that provides the conversation UI with an input composer and alternating message bubbles.
+- /hello — Hello design route that renders the static design translated from Figma assets.
 
-### `npm start`
+## Environment Variables
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app reads configuration from environment variables (Create React App style, prefixed with REACT_APP_). The primary variables used by this codebase are:
 
-### `npm test`
+- REACT_APP_API_BASE (primary)
+  Sets the base URL for API calls. This is the first priority for API configuration.
+  Example: REACT_APP_API_BASE=https://api.example.com
 
-Launches the test runner in interactive watch mode.
+- REACT_APP_BACKEND_URL (fallback)
+  Used if REACT_APP_API_BASE is not set. If neither are set, the app falls back to window.location.origin + /api.
+  Example: REACT_APP_BACKEND_URL=http://localhost:4000
 
-### `npm run build`
+- REACT_APP_WS_URL (optional)
+  Optional WebSocket endpoint for future real-time features. Currently not used by default code paths but surfaced via config.
+  Example: REACT_APP_WS_URL=wss://api.example.com/ws
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- REACT_APP_FEATURE_FLAGS (mock mode and other flags)
+  Enables feature flags. For mock API mode set a JSON object with mockApi: true, or provide a CSV-like string that includes mockApi.
+  Examples:
+  - REACT_APP_FEATURE_FLAGS={"mockApi": true}
+  - REACT_APP_FEATURE_FLAGS=mockApi
+  - REACT_APP_FEATURE_FLAGS=mockApi=true,otherFlag
 
-## Customization
+Other environment variables present in the container but not directly used by the main flows include: REACT_APP_FRONTEND_URL, REACT_APP_NODE_ENV, REACT_APP_ENABLE_SOURCE_MAPS, REACT_APP_PORT, REACT_APP_TRUST_PROXY, REACT_APP_LOG_LEVEL, REACT_APP_HEALTHCHECK_PATH, REACT_APP_EXPERIMENTS_ENABLED. They are available under process.env and surfaced in src/config/env.js where applicable.
 
-### Colors
+## How API Configuration Works
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+The app resolves API base in this priority order:
+1) REACT_APP_API_BASE
+2) REACT_APP_BACKEND_URL
+3) window.location.origin + /api
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
+The client performs a lightweight health probe. If no base is configured or the health check fails, or if REACT_APP_FEATURE_FLAGS enables mockApi, the client falls back to an in-browser mock that simulates /chat and /health.
 
-### Components
+- GET/POST helpers: src/api/client.js
+- Mock implementation: src/api/mock.js
+- Env resolution: src/config/env.js
 
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
+## Installation and Running
 
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+From the chatgpt_frontend directory:
 
-## Learn More
+1) npm install
+   Installs all dependencies.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2) npm start
+   Starts the development server on port 3000.
 
-### Code Splitting
+3) npm run build
+   Builds the production bundle to the build directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4) npm test
+   Runs tests in watch mode.
 
-### Analyzing the Bundle Size
+## Assets and Static Files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Figma images are served from public/figmaimages and referenced in code using getFigmaAsset from src/utils/assetPath.js.
+- Hello design HTML/CSS/JS assets that informed the React translation are available under assets/. These are reference artifacts; the running app uses the React route at /hello.
+- Global styles for the app are under src/App.css and route-specific styles under src/routes/*.css.
 
-### Making a Progressive Web App
+## Accessibility and Keyboard Controls
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The chat composer supports keyboard interactions out of the box:
+- Enter to send the current message
+- Shift+Enter to insert a new line without sending
 
-### Advanced Configuration
+The UI includes ARIA roles and live regions to announce new messages for screen readers, labeled buttons and inputs, and a visible focus management pattern. A theme toggle button has an accessible label that reflects the next state (e.g., “Switch to dark mode”). The messages region uses aria-live="polite" and role="log" to announce additions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Project Structure Overview
 
-### Deployment
+- src/App.js: App shell, routes, and theme toggle
+- src/routes/Chat.js and Chat.css: Chat UI and input composer
+- src/routes/Hello.js and Hello.css: Hello design route and styles
+- src/api/client.js: JSON fetch wrapper and mock fallback logic
+- src/api/mock.js: Local mock implementation for /chat and /health
+- src/config/env.js: Environment variable resolution
+- src/utils/assetPath.js: Helpers to build figma image URLs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Notes
 
-### `npm run build` fails to minify
+- To fully disable mock mode, ensure REACT_APP_FEATURE_FLAGS does not include mockApi and the configured API base is reachable (a /health endpoint is preferred but not required).
+- If no API base is provided, the app will assume /api on the same origin and attempt to connect there.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
