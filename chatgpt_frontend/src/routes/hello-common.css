@@ -1,0 +1,129 @@
+:root {
+  --color-000000: #000000;
+  --color-1c1c1c: #1c1c1c;
+  --color-333333: #333333;
+  --color-404040: #404040;
+  --color-ffffff: #ffffff;
+  --color-adadfb: #adadfb;
+  --color-f7f9fb: #f7f9fb;
+  --color-c6c7f8: #c6c7f8;
+  --color-4c98fd: #4c98fd;
+  --color-ff0000: #ff0000;
+
+  --typo-23-family: 'Inter', sans-serif;
+  --typo-23-size: 24px;
+  --typo-23-weight: 400;
+  --typo-23-line-height: 32px;
+  --typo-23-color: var(--color-ffffff);
+
+  --typo-24-family: 'Inter', sans-serif;
+  --typo-24-size: 14px;
+  --typo-24-weight: 400;
+  --typo-24-line-height: 20px;
+  --typo-24-color: var(--color-ffffff);
+
+  --typo-29-family: 'Inter', sans-serif;
+  --typo-29-size: 12px;
+  --typo-29-weight: 400;
+  --typo-29-line-height: 18px;
+  --typo-29-color: var(--color-1c1c1c);
+
+  --typo-30-family: 'Inter', sans-serif;
+  --typo-30-size: 18px;
+  --typo-30-weight: 600;
+  --typo-30-line-height: 24px;
+  --typo-30-color: var(--color-1c1c1c);
+
+  --typo-31-family: 'Inter', sans-serif;
+  --typo-31-size: 14px;
+  --typo-31-weight: 400;
+  --typo-31-line-height: 20px;
+  --typo-31-color: var(--color-1c1c1c);
+
+  --typo-32-family: 'Inter', sans-serif;
+  --typo-32-size: 18px;
+  --typo-32-weight: 400;
+  --typo-32-line-height: 24px;
+  --typo-32-color: var(--color-ffffff);
+
+  --typo-33-family: 'Inter', sans-serif;
+  --typo-33-size: 18px;
+  --typo-33-weight: 600;
+  --typo-33-line-height: 24px;
+  --typo-33-color: var(--color-ffffff);
+
+  --typo-34-family: 'Inter', sans-serif;
+  --typo-34-size: 18px;
+  --typo-34-weight: 400;
+  --typo-34-line-height: 24px;
+  --typo-34-color: var(--color-1c1c1c);
+
+  --typo-35-family: 'Poppins', sans-serif;
+  --typo-35-size: 64px;
+  --typo-35-weight: 600;
+  --typo-35-line-height: 96px;
+  --typo-35-color: var(--color-1c1c1c);
+
+  --typo-36-family: 'Poppins', sans-serif;
+  --typo-36-size: 40px;
+  --typo-36-weight: 400;
+  --typo-36-line-height: 60px;
+  --typo-36-color: var(--color-1c1c1c);
+
+  --typo-37-family: 'Inter', sans-serif;
+  --typo-37-size: 48px;
+  --typo-37-weight: 400;
+  --typo-37-line-height: 58px;
+  --typo-37-color: var(--color-ffffff);
+
+  --typo-38-family: 'Inter', sans-serif;
+  --typo-38-size: 18px;
+  --typo-38-weight: 600;
+  --typo-38-line-height: 28px;
+  --typo-38-color: var(--color-1c1c1c);
+
+  --typo-39-family: 'Inter', sans-serif;
+  --typo-39-size: 18px;
+  --typo-39-weight: 600;
+  --typo-39-line-height: 24px;
+  --typo-39-color: var(--color-1c1c1c);
+
+  --radius-2-78: 2.7778px;
+  --radius-5-55: 5.5556px;
+  --radius-7-40: 7.4px;
+  --radius-8: 8px;
+  --radius-11-11: 11.1111px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-30: 30px;
+  --radius-40: 40px;
+  --radius-48: 48px;
+  --radius-80: 80px;
+
+  --shadow-10: -30px 30px 40px rgba(0,0,0,1);
+  --shadow-7: 0 4.3509px 10.8773px rgba(0,0,0,1);
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+}
+
+* { box-sizing: border-box; }
+
+.typo-23 { font-family: var(--typo-23-family); font-size: var(--typo-23-size); font-weight: var(--typo-23-weight); line-height: var(--typo-23-line-height); color: var(--typo-23-color); }
+.typo-24 { font-family: var(--typo-24-family); font-size: var(--typo-24-size); font-weight: var(--typo-24-weight); line-height: var(--typo-24-line-height); color: var(--typo-24-color); }
+.typo-29 { font-family: var(--typo-29-family); font-size: var(--typo-29-size); font-weight: var(--typo-29-weight); line-height: var(--typo-29-line-height); color: var(--typo-29-color); }
+.typo-30 { font-family: var(--typo-30-family); font-size: var(--typo-30-size); font-weight: var(--typo-30-weight); line-height: var(--typo-30-line-height); color: var(--typo-30-color); }
+.typo-31 { font-family: var(--typo-31-family); font-size: var(--typo-31-size); font-weight: var(--typo-31-weight); line-height: var(--typo-31-line-height); color: var(--typo-31-color); }
+.typo-32 { font-family: var(--typo-32-family); font-size: var(--typo-32-size); font-weight: var(--typo-32-weight); line-height: var(--typo-32-line-height); color: var(--typo-32-color); }
+.typo-33 { font-family: var(--typo-33-family); font-size: var(--typo-33-size); font-weight: var(--typo-33-weight); line-height: var(--typo-33-line-height); color: var(--typo-33-color); }
+.typo-34 { font-family: var(--typo-34-family); font-size: var(--typo-34-size); font-weight: var(--typo-34-weight); line-height: var(--typo-34-line-height); color: var(--typo-34-color); }
+.typo-35 { font-family: var(--typo-35-family); font-size: var(--typo-35-size); font-weight: var(--typo-35-weight); line-height: var(--typo-35-line-height); color: var(--typo-35-color); }
+.typo-36 { font-family: var(--typo-36-family); font-size: var(--typo-36-size); font-weight: var(--typo-36-weight); line-height: var(--typo-36-line-height); color: var(--typo-36-color); }
+.typo-37 { font-family: var(--typo-37-family); font-size: var(--typo-37-size); font-weight: var(--typo-37-weight); line-height: var(--typo-37-line-height); color: var(--typo-37-color); }
+.typo-38 { font-family: var(--typo-38-family); font-size: var(--typo-38-size); font-weight: var(--typo-38-weight); line-height: var(--typo-38-line-height); color: var(--typo-38-color); }
+.typo-39 { font-family: var(--typo-39-family); font-size: var(--typo-39-size); font-weight: var(--typo-39-weight); line-height: var(--typo-39-line-height); color: var(--typo-39-color); }

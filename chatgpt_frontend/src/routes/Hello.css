@@ -1,0 +1,394 @@
+@import url('./hello-common.css');
+
+/* Root screen container */
+#screen-hello-642-5347 {
+  position: relative;
+  width: 1600px;
+  height: 2340px;
+  background: var(--color-000000);
+  overflow: hidden;
+  margin: 0 auto; /* center horizontally in viewport */
+}
+
+/* Cover area (0,0,1600,900) as container to anchor children */
+.cover {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1600px;
+  height: 900px;
+}
+
+/* Left New chat container */
+.left-newchat {
+  position: absolute;
+  left: 119px; /* 119 - 0 */
+  top: 124.4445px; /* 124.4445 - 0 */
+  width: 1000px;
+  height: 711.1111px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-24);
+}
+
+/* Left internal frame (content column) at (314.8333,124.4445) relative to cover */
+.left-newchat .inner {
+  position: absolute;
+  left: 195.8333px; /* 314.8333 - 119 */
+  top: 0px; /* 124.4445 - 124.4445 */
+  width: 804.1666px;
+  height: 711px;
+}
+
+/* Header row area */
+.left-newchat .header {
+  position: absolute;
+  left: 82.6390px; /* 397.4723 - 314.8333 */
+  top: 180.5556px;  /* 305 - 124.4444 */
+  width: 638.8889px;
+  height: 304.5555px;
+}
+
+/* ChatGPT logo composite image */
+.left-newchat .chatgpt-logo {
+  position: absolute;
+  left: 226.2222px; /* 623.6945 - 397.4723 */
+  top: 0px; /* 305 - 305 */
+  width: 152.7778px;
+  height: 44.4444px;
+  object-fit: contain;
+}
+.left-newchat .chatgpt-tag {
+  position: absolute;
+  left: 390.1111px; /* 787.5834 - 397.4723 */
+  top: 14.3333px;   /* 319.3333 - 305 */
+  width: 22.5556px;
+  height: 15.7778px;
+  background: var(--color-c6c7f8);
+  border-radius: 2.7778px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-newchat .chatgpt-tag .txt { font: inherit; }
+.left-newchat .chatgpt-tag span { font-family: var(--typo-29-family); font-size: var(--typo-29-size); line-height: var(--typo-29-line-height); color: var(--typo-29-color); }
+
+/* Three-column section headings and chips wrapper frames */
+.left-newchat .cols {
+  position: absolute;
+  left: 0px; /* header frame itself */
+  top: 100px; /* from y:405 - 305 */
+  width: 638.8889px;
+  height: 204.5556px;
+}
+
+/* Column blocks (Examples, Capabilities, Limitations) */
+.left-newchat .col { position: absolute; width: 194.4444px; }
+.left-newchat .col.examples { left: 0px; top: 0px; }
+.left-newchat .col.capabilities { left: 222.2222px; top: 0px; }
+.left-newchat .col.limitations { left: 444.4445px; top: 0px; }
+
+/* Icon in column (22.22 square), approx positions */
+.left-newchat .col .icon {
+  position: absolute;
+  left: 86.1111px;
+  top: 5.5556px;
+  width: 22.2222px;
+  height: 22.2222px;
+  /* Placeholder styling to visualize icon area */
+  border-radius: var(--radius-5-55);
+}
+
+/* Headings text below icon */
+.left-newchat .col .heading {
+  position: absolute;
+  left: 0px;
+  top: 33.7778px;
+  width: 100%;
+  text-align: center;
+}
+.left-newchat .col.examples .heading span,
+.left-newchat .col.capabilities .heading span,
+.left-newchat .col.limitations .heading span { 
+  font-family: var(--typo-30-family); font-size: var(--typo-30-size); font-weight: var(--typo-30-weight); line-height: var(--typo-30-line-height); color: var(--typo-30-color);
+}
+
+/* Chips lines (3 rows each) */
+.left-newchat .col .chip {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  background: var(--color-f7f9fb);
+  border-radius: var(--radius-5-55);
+  padding: 4px 8px;
+  text-align: center;
+}
+.left-newchat .col.examples .chip.i1 { top: 84.6667px; height: 28px; }
+.left-newchat .col.examples .chip.i2 { top: 134.2222px; height: 28px; }
+.left-newchat .col.examples .chip.i3 { top: 183.7778px; height: 28px; }
+
+.left-newchat .col.capabilities .chip.i1 { top: 84.6667px; height: 28px; }
+.left-newchat .col.capabilities .chip.i2 { top: 134.2222px; height: 28px; }
+.left-newchat .col.capabilities .chip.i3 { top: 183.7778px; height: 28px; }
+
+.left-newchat .col.limitations .chip.i1 { top: 84.6667px; height: 28px; }
+.left-newchat .col.limitations .chip.i2 { top: 134.2222px; height: 28px; }
+.left-newchat .col.limitations .chip.i3 { top: 183.7778px; height: 28px; }
+
+.left-newchat .chip span { font-family: var(--typo-31-family); font-size: var(--typo-31-size); line-height: var(--typo-31-line-height); color: var(--typo-31-color); }
+
+/* Bottom input area (parent frame at 755) */
+.left-newchat .input-frame {
+  position: absolute;
+  left: 0px; /* from inner frame x */
+  top: 630.5555px; /* 755 - 124.4445 */
+  width: 804.1666px;
+  height: 80.5556px;
+}
+.left-newchat .input {
+  position: absolute;
+  left: 138.1946px; /* 453.0279 - 314.8333 */
+  top: 13.8889px;  /* 768.8889 - 755 */
+  width: 527.7778px;
+  height: 38.8889px;
+  background: var(--color-f7f9fb);
+  border-radius: var(--radius-11-11);
+}
+.left-newchat .input .placeholder {
+  position: absolute;
+  left: 207.6389px; /* approx 522.4723 - 314.8333 */
+  top: 12.4444px; /* 781.3333 - 768.8889 */
+  width: 425px;
+  height: 14px;
+}
+.left-newchat .input .placeholder span { font-family: var(--typo-31-family); font-size: var(--typo-31-size); line-height: var(--typo-31-line-height); color: var(--typo-31-color); }
+.left-newchat .input .left-icons { position: absolute; left: 152.0833px; top: 2.5px; width: 44.4444px; height: 19.4444px; }
+.left-newchat .input .right-icon { position: absolute; right: 8px; top: 12px; width: 13.8889px; height: 13.8889px; cursor: pointer; }
+
+/* Left Sidebar */
+.left-sidebar {
+  position: absolute;
+  left: 119px;
+  top: 124.4445px;
+  width: 195.8333px;
+  height: 711px;
+  background: var(--color-ffffff);
+  border: 0.6944px solid var(--color-1c1c1c);
+}
+
+/* Right New chat container (dark) */
+.right-newchat {
+  position: absolute;
+  left: 1157px;
+  top: 124.4445px;
+  width: 1000px;
+  height: 711.1111px;
+  background: var(--color-1c1c1c);
+  border-radius: var(--radius-24);
+}
+
+/* Right internal frames mirror left but with dark bg and white typography. */
+.right-newchat .inner {
+  position: absolute;
+  left: 195.8334px; /* 1352.8334 - 1157 */
+  top: 0px; /* 124.4445 - 124.4445 */
+  width: 804.1666px;
+  height: 711px;
+}
+.right-newchat .header { position: absolute; left: 278.6399px; top: 180.5556px; width: 638.8889px; height: 304.5556px; }
+.right-newchat .chatgpt-tag {
+  position: absolute;
+  left: 390.1111px;
+  top: 14.3333px;
+  width: 22.5556px;
+  height: 15.7778px;
+  background: var(--color-c6c7f8);
+  border-radius: 2.7778px;
+}
+
+.right-newchat .cols { position: absolute; left: 0px; top: 100px; width: 638.8889px; height: 204.5556px; }
+.right-newchat .col { position: absolute; width: 194.4444px; }
+.right-newchat .col.examples { left: 0px; top: 0; }
+.right-newchat .col.capabilities { left: 222.2222px; top: 0; }
+.right-newchat .col.limitations { left: 444.4445px; top: 0; }
+.right-newchat .col .heading span { font-family: var(--typo-33-family); font-size: var(--typo-33-size); font-weight: var(--typo-33-weight); line-height: var(--typo-33-line-height); color: var(--typo-33-color); }
+.right-newchat .chip span { font-family: var(--typo-24-family); font-size: var(--typo-24-size); line-height: var(--typo-24-line-height); color: var(--typo-24-color); }
+.right-newchat .chip { background: var(--color-ffffff); border-radius: var(--radius-5-55); padding: 4px 8px; text-align: center; }
+
+/* Right input */
+.right-newchat .input-frame {
+  position: absolute;
+  left: 0px;
+  top: 630.5556px;
+  width: 804.1666px;
+  height: 80.5556px;
+}
+.right-newchat .input {
+  position: absolute;
+  left: 334.1947px; 
+  top: 13.8889px; 
+  width: 527.7778px;
+  height: 38.8889px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-11-11);
+}
+.right-newchat .input .placeholder { position: absolute; left: 372.6399px; top: 12.4444px; width: 425px; height: 14px; }
+.right-newchat .input .placeholder span { font-family: var(--typo-24-family); font-size: var(--typo-24-size); line-height: var(--typo-24-line-height); color: var(--typo-24-color); }
+.right-newchat .input .right-icon { position:absolute; right:8px; top:12px; width:13.8889px; height:13.8889px; cursor: pointer; }
+
+/* Right Sidebar */
+.right-sidebar {
+  position: absolute;
+  left: 1157px;
+  top: 124.4445px;
+  width: 195.8333px;
+  height: 711px;
+  background: var(--color-1c1c1c);
+  border: 0.6944px solid var(--color-ffffff);
+}
+
+/* Features card */
+.features-card {
+  position: absolute;
+  left: 45px;
+  top: 338px;
+  width: 304px;
+  height: 128px;
+  border-radius: var(--radius-30);
+  background: var(--color-ffffff);
+  box-shadow: var(--shadow-10);
+}
+.features-card .n18 {
+  position: absolute;
+  left: 32px; /* 77 - 45 */
+  top: 16px;  /* 354 - 338 */
+}
+.features-card .n18 span { font-family: var(--typo-35-family); font-size: var(--typo-35-size); font-weight: var(--typo-35-weight); line-height: var(--typo-35-line-height); color: var(--typo-35-color); }
+.features-card .screens {
+  position: absolute;
+  left: 113px; /* 158 - 45 */
+  top: 34px;  /* 372 - 338 */
+}
+.features-card .screens span { font-family: var(--typo-36-family); font-size: var(--typo-36-size); font-weight: var(--typo-36-weight); line-height: var(--typo-36-line-height); color: var(--typo-36-color); }
+
+/* Lower section frame starting y=900 */
+.lower {
+  position: absolute;
+  left: 0px;
+  top: 900px;
+  width: 1600px;
+  height: 1212px;
+}
+
+/* Section wrappers with 1px white border */
+.section {
+  position: absolute;
+  left: 120px;
+  width: 1360px;
+  height: 240px;
+  border: 1px solid var(--color-ffffff);
+  border-radius: var(--radius-8);
+}
+.section.more-pages { top: 0px; }
+.section.made-with { top: 240px; }
+.section.components { top: 480px; }
+
+/* Icon & text rows positions */
+.section .row {
+  position: absolute;
+  left: 120px;
+  width: auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.section.more-pages .row { top: 80px; }
+.section.made-with .row { top: 80px; }
+.section.components .row { top: 80px; }
+
+.section .row .icon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.section .row .title { }
+.section .row .title span { font-family: var(--typo-37-family); font-size: var(--typo-37-size); line-height: var(--typo-37-line-height); color: var(--typo-37-color); }
+
+/* About me block */
+.about {
+  position: absolute;
+  left: 120px;
+  top: 720px; /* 1620 - 900 */
+  width: 1360px;
+  height: 492px;
+  border: 1px solid var(--color-ffffff);
+  border-radius: var(--radius-8);
+}
+.about .row {
+  position: absolute;
+  left: 0px;
+  top: 80px; /* 1700 - 1620 */
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 80px;
+}
+.about .row .icon { width: 80px; height: 80px; }
+.about .row .title span { font-family: var(--typo-37-family); font-size: var(--typo-37-size); line-height: var(--typo-37-line-height); color: var(--typo-37-color); }
+.about .desc {
+  position: absolute;
+  left: 0px;
+  top: 188px; /* 1808 - 1620 */
+  width: 1360px;
+  height: 224px;
+}
+.about .desc span { font-family: var(--typo-23-family); font-size: var(--typo-23-size); line-height: var(--typo-23-line-height); color: var(--typo-23-color); white-space: pre-line; }
+
+/* Footer (Documentation) */
+.footer {
+  position: absolute;
+  left: 0px;
+  top: 2112px;
+  width: 1600px;
+  height: 228px;
+}
+.footer .brand {
+  position: absolute;
+  left: 120px;
+  top: 0px;
+  width: 363px;
+  height: 28px;
+}
+.footer .brand .logo {
+  position: absolute;
+  left: 0px; /* 120 - 120 */
+  top: 80px;  /* 2192 - 2112 */
+  width: 105px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer .brand .logo .icon { width: 28px; height: 28px; }
+.footer .brand .logo .text { width: 71px; height: 12px; }
+
+.footer .copyright {
+  position: absolute;
+  left: 245px;
+  top: 84px; /* 2196 - 2112 */
+  width: 238px;
+  height: 20px;
+}
+.footer .copyright span { font-family: var(--typo-24-family); font-size: var(--typo-24-size); line-height: var(--typo-24-line-height); color: var(--typo-24-color); }
+
+.footer .social {
+  position: absolute;
+  left: 1188px;
+  top: 80px; /* 2192 - 2112 */
+  width: 292px;
+  height: 28px;
+  display: flex;
+  gap: 24px;
+}
+.footer .social .s { width: 28px; height: 28px; position: relative; }
+.footer .social .s img { width: 28px; height: 28px; position: absolute; left: 0; top: 0; object-fit: contain; }
