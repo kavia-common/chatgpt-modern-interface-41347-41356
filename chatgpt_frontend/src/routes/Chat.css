@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: calc(100vh - 64px);
+  min-height: 100vh; /* ensure full viewport height */
   background: var(--bg-primary);
   color: var(--text-primary);
   padding: 16px;
@@ -13,7 +13,7 @@
   flex-direction: column;
   width: 100%;
   max-width: 960px;
-  height: calc(100vh - 140px); /* account for header/nav and padding */
+  min-height: calc(100vh - 120px); /* account for header/nav area and margins */
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: var(--bg-secondary);
@@ -45,6 +45,7 @@
   flex-direction: column;
   gap: 12px;
   background: var(--bg-primary);
+  scroll-behavior: smooth;
 }
 
 /* Message row layout */
@@ -105,12 +106,15 @@
 
 /* Input bar anchored to bottom of container */
 .chat-inputbar {
+  position: sticky;
+  bottom: 0;               /* sticky to the bottom of the scroll container */
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 12px;
   border-top: 1px solid var(--border-color);
   background: var(--bg-secondary);
+  z-index: 2;              /* ensure above messages */
 }
 
 .chat-input {
@@ -151,10 +155,19 @@
   transform: translateY(-1px);
 }
 
+/* Visually hidden utility for a11y labels */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
+
 /* Better mobile spacing */
 @media (max-width: 640px) {
   .chat-container {
-    height: calc(100vh - 120px);
+    min-height: calc(100vh - 100px);
   }
 
   .bubble {
